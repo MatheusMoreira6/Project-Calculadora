@@ -9,10 +9,10 @@ void main ()
     printf("\nCalculadora V1.0");
     printf("\n\nInsira o primeiro valor:");
         scanf("%f", &A);
-    printf("\nInsira o segundo valor:");
-        scanf("%f", &B);
     printf("\nSelecione o tipo de operação(+,-,*,/):");
         scanf("%s", &C);
+    printf("\nInsira o segundo valor:");
+        scanf("%f", &B);
     if (C=='+') /* "==" Igual a*/
     {
         D=A+B;
