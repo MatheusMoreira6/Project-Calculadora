@@ -1,11 +1,11 @@
-#include <stdio.h> /*Biblioteca de tratamento de entrada/saída.*/
-#include <stdlib.h> /*Biblioteca de implementação de Funções para diversas operações*/
-#include <locale.h> /*Biblioteca que especifica constantes de acordo com a localização específica, como moeda, data, etc.*/
+#include <stdio.h> //Biblioteca de tratamento de entrada/saída.
+#include <stdlib.h> //Biblioteca de implementação de Funções para diversas operações.
+#include <locale.h> //Biblioteca que especifica constantes de acordo com a localização específica, como moeda, data, etc.
 void main ()
 {
-    char C; /*Variável de caracteres alfanumérico*/
-    float A, B, D; /*Variável de números reais com precisão simples*/
-    setlocale(LC_ALL, "Portuguese"); /*LC_ALL Faz referência à todos os aspectos da localização*/
+    char C; //Variável de caracteres alfanumérico.
+    float A, B, D; //Variável de números reais com precisão simples.
+    setlocale(LC_ALL, "Portuguese"); //LC_ALL Faz referência à todos os aspectos da localização.
     printf("\nCalculadora V1.0");
     printf("\n\nInsira o primeiro valor:");
         scanf("%f", &A);
