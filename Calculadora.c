@@ -1,12 +1,15 @@
 #include <stdio.h> //Biblioteca de tratamento de entrada/saída.
 #include <stdlib.h> //Biblioteca de implementação de Funções para diversas operações.
 #include <locale.h> //Biblioteca que especifica constantes de acordo com a localização específica, como moeda, data, etc.
-#include <conio.h>
+#include <conio.h> //Biblioteca para utilizaão de funções como: getche
+#include <ctype.h>
+
 int main ()
 {
     char C; //Variável de caracteres alfanumérico.
-    float A, B, D; //Variável de números reais com precisão dupla.
+    float A, B, D; //Variável de números reais.
     setlocale(LC_ALL, "Portuguese"); //LC_ALL Faz referência à todos os aspectos de localização.
+    system("color A"); //Coloração
     printf("Calculadora V3.0");
     printf("\n\nInsira o primeiro valor:");
         scanf("%f", &A);
@@ -36,7 +39,8 @@ int main ()
     }
     else
     {
-        printf("\n\nOperador Inválido!\n\n\n");
+        system("color C");
+        printf("\n\nErro: Operador Inválido!\n\n\n");
     }
     system ("pause");
 }
