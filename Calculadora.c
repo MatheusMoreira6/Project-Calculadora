@@ -3,7 +3,7 @@
 #include <locale.h> //Biblioteca que especifica constantes de acordo com a localização específica, como moeda, data, etc.
 #include <conio.h> //Biblioteca para utilização de funções como: getche
 
-float main ()
+void main ()
 {
     char C, V; //Variável de caracteres alfanumérico.
     float A, B, D; //Variável de números reais.
@@ -22,17 +22,25 @@ float main ()
             switch(C)
             {
                 case '+':
+                {
                     D=A+B;
                     break;
+                }
                 case '-':
+                {
                     D=A-B;
                     break;
+                }
                 case '*':
+                {
                     D=A*B;
                     break;
+                }
                 case '/':
+                {
                     D=A/B;
                     break;
+                }
             }
             printf("_________________________________________\n\nResultado:%g\n_________________________________________\n", D);
             printf("\nDeseja realizar um novo cálculo(S/N)?");
