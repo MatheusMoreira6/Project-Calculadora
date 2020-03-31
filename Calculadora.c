@@ -1,3 +1,5 @@
+//Created by: Matheus Moreira Mendes.
+
 #include <stdio.h> //Biblioteca de tratamento de entrada/saída.
 #include <stdlib.h> //Biblioteca de implementação de Funções para diversas operações.
 #include <locale.h> //Biblioteca que especifica constantes de acordo com a localização específica, como moeda, data, etc.
