@@ -9,13 +9,14 @@
 
 void main ()
 {
-    char V, X;
+    char V, X, R;
     int M;
     float N1, N2, N3, N4, N5;
     setlocale(LC_ALL, "Portuguese");
     system("title Calculadora");
     do{
         M=0;
+        R=0;
         V=0;
         X=0;
         N1=0;
@@ -95,6 +96,12 @@ void main ()
                     printf("\n-------------------------------\n");
                     printf("\n| Insira o radicando:");
                         scanf("%f", &N1);
+                    while(N1<0)
+                    {
+                        printf("\n-------------------------------\n");
+                        printf("\n| Insira novamente o radicando:");
+                            scanf("%f", &N1);
+                    }
                     N5=sqrt(N1);
                     break;
                 }
@@ -108,6 +115,12 @@ void main ()
                     printf("\n| Informe qual é o X: N");
                         X=getche();
                     printf("\n\n-------------------------------\n");
+                    while(X<'1' || X>'4')
+                    {
+                        printf("\n| Informe qual é o X: N");
+                            X=getche();
+                        printf("\n\n-------------------------------\n");
+                    }
                     switch (X)
                     {
                         case '1':
@@ -170,6 +183,34 @@ void main ()
                 printf("\n-------------------------------\n");
                 printf("\n| X=%g\n", N5);
                 printf("\n-------------------------------\n");
+                printf("\n| Deseja inverter N2 e N4 (S/N)?");
+                    R=getche();
+                printf("\n\n-------------------------------\n");
+                if(R=='S' || R=='s')
+                {
+                    N5=0;
+                    switch(X)
+                    {
+                        case '1':
+                        {
+                            N5=((N3*N4)/N2);
+                        }
+                        case '2':
+                        {
+                            N5=((N3*N4)/N1);
+                        }
+                        case '3':
+                        {
+                            N5=((N1*N2)/N4);
+                        }
+                        case '4':
+                        {
+                            N5=((N1*N2)/N3);
+                        }
+                    }
+                    printf("\n| X=%g\n", N5);
+                    printf("\n-------------------------------\n");
+                }
             }
             else
             {
