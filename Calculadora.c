@@ -25,19 +25,20 @@ void main ()
         N4=0;
         N5=0;
         system("color F0");
-        printf("|      Calculadora V5.0       |");
+        printf("|      Calculadora V6.0       |");
         printf("\n-------------------------------\n");
         printf("|      1 - Soma               |\n");
         printf("|      2 - Subtração          |\n");
         printf("|      3 - Multiplicação      |\n");
         printf("|      4 - Divisão            |\n");
         printf("|      5 - Raiz Quadrada      |\n");
-        printf("|      6 - Regra de três      |\n");
+        printf("|      6 - Potenciação        |\n");
+        printf("|      7 - Regra de três      |\n");
         printf("-------------------------------\n");
         printf("|Selecione o tipo de operação:");
             M=getche();
         printf("\n-------------------------------\n");
-        if (M=='1' || M=='2' || M=='3' || M=='4' || M=='5' || M=='6')
+        if (M=='1' || M=='2' || M=='3' || M=='4' || M=='5' || M=='6' || M=='7')
         {
             system("cls");
             switch(M)
@@ -107,7 +108,84 @@ void main ()
                 }
                 case '6':
                 {
-                    printf("| 6 - Regra de três - Simples |");
+                    printf("|    6 - Potenciação (X^x)    |");
+                    printf("\n-------------------------------\n");
+                    printf("\n| Insira a base(X):");
+                        scanf("%f", &N1);
+                    printf("\n-------------------------------\n");
+                    printf("\n| Insira o expoente(x):");
+                        scanf("%f", &N2);
+                    N3=N1;
+                    if(N1>=0)
+                    {
+                        if(N2>0)
+                        {
+                            for(N4=1; N4<N2; N4++)
+                            {
+                                N1=N1*N3;
+                            }
+                            N5=N1;
+                        }
+                        else
+                        {
+                            if((N1==0 && N2==0) || (N1==0 && N2<0))
+                            {
+                                R='I';
+                            }
+                            else
+                            {
+                                if(N2==0)
+                                {
+                                    N5=1;
+                                }
+                                else
+                                {
+                                    N2=N2*-1;
+                                    for(N4=1; N4<N2; N4++)
+                                    {
+                                        N1=N1*N3;
+                                    }
+                                    N5=1/N1;
+                                }
+                            }
+                        }
+                    }
+                    else
+                    {
+                        if(N2>0)
+                        {
+                            for(N4=1; N4<N2; N4++)
+                            {
+                                N1=N1*N3;
+                            }
+                            N5=N1*-1;
+                        }
+                        else
+                        {
+                            if(N2==0)
+                            {
+                                N5=-1;
+                            }
+                            else
+                            {
+                                N2=N2*-1;
+                                for(N4=1; N4<N2; N4++)
+                                {
+                                    N1=N1*N3;
+                                }
+                                N5=(1/N1)*-1;
+                            }
+                        }
+                        if(N5>0)
+                        {
+                            N5=N5*-1;
+                        }
+                    }
+                    break;
+                }
+                case '7':
+                {
+                    printf("| 7 - Regra de três - Simples |");
                     printf("\n-------------------------------\n");
                     printf("|         N1 ----- N2         |\n");
                     printf("|         N3 ----- N4         |");
@@ -176,12 +254,13 @@ void main ()
                             break;
                         }
                     }
+                    break;
                 }
             }
-            if(M=='6')
+            if(M=='7')
             {
                 printf("\n-------------------------------\n");
-                printf("\n| X=%g\n", N5);
+                printf("\n| X = %g\n", N5);
                 printf("\n-------------------------------\n");
                 printf("\n| Deseja inverter N2 e N4 (S/N)?");
                     R=getche();
@@ -208,15 +287,24 @@ void main ()
                             N5=((N1*N2)/N3);
                         }
                     }
-                    printf("\n| X=%g\n", N5);
+                    printf("\n| X = %g\n", N5);
                     printf("\n-------------------------------\n");
                 }
             }
             else
             {
-                printf("\n-------------------------------\n");
-                printf("\n| Resultado:%g\n", N5);
-                printf("\n-------------------------------\n");
+                if(R=='I')
+                {
+                    printf("\n-------------------------------\n");
+                    printf("\n| Base ou Expoente Inválido!\n");
+                    printf("\n-------------------------------\n");
+                }
+                else
+                {
+                    printf("\n-------------------------------\n");
+                    printf("\n| Resultado:%g\n", N5);
+                    printf("\n-------------------------------\n");
+                }
             }
             printf("\nDeseja realizar um novo cálculo(S/N)?");
                 V=getche();
@@ -230,7 +318,7 @@ void main ()
             system("color 0C");
             printf("\n");
             printf("\n-------------------------------\n");
-            printf("|  Erro: Operador Inválido!   |");
+            printf("|  Erro: Opção Inválida!      |");
             printf("\n-------------------------------\n");
             Sleep(3000);
             V='S';
